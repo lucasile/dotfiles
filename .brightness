@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$1" -ge 0 ] && [ "$1" -le 100 ]; then
+
+    max=492
+    value=$(awk "BEGIN {num=${max}*${1}/100; floored=int(num); print (num-floored<0.5) ? floored:floored+1}")
+
+    echo "$value" | sudo tee /sys/class/backlight/apple-panel-bl/brightness > /dev/null
+
+fi
