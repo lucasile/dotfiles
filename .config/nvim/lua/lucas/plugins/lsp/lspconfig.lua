@@ -151,7 +151,7 @@ lspconfig["lua_ls"].setup({
 	},
 })
 
-lspconfig["ccls"].setup({
+lspconfig["clangd"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
